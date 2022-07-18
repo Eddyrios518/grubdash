@@ -1,5 +1,6 @@
 const router = require("express").Router();
-
+const controller = require("./dishes.controller");
+const methodNotAllowed = require("../errors/methodNotAllowed")
 // TODO: Implement the /dishes routes needed to make the tests pass
 
 router
@@ -7,7 +8,7 @@ router
 // to make a GET request that uses list()
 .get(controller.list)
 // make POST request to create new dish using create()
-// .post(controller.create)
+.post(controller.create)
 // for request types that aren't available to use on dish
 .all(methodNotAllowed)
 
